@@ -1,0 +1,141 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'io.fabric'
+
+android {
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        applicationId "app.workchat.traceindia.android"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCode
+        versionName rootProject.versionNumber
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "androidx.core:core-ktx:$rootProject.coreVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    //AndroidX Views dependencies (Support library)
+    implementation "androidx.activity:activity-ktx:$rootProject.activityVersion"
+    implementation "androidx.fragment:fragment-ktx:$rootProject.fragmentVersion"
+    implementation "androidx.cardview:cardview:$rootProject.cardViewVersion"
+    implementation "androidx.browser:browser:$rootProject.browserVersion"
+    implementation "androidx.drawerlayout:drawerlayout:$rootProject.drawerLayoutVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+
+    // Listenable futures conflict in the webview & core
+    implementation "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava"
+
+    implementation "com.google.android:flexbox:$rootProject.flexboxVersion"
+    implementation "com.airbnb.android:lottie:$rootProject.lottieVersion"
+    implementation "com.pacioianu.david:ink-page-indicator:$rootProject.pageIndicatorVersion"
+
+    // Architecture Components
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
+    kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
+    testImplementation "androidx.arch.core:core-testing:$rootProject.archTestingVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    testImplementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    testImplementation "androidx.room:room-runtime:$rootProject.roomVersion"
+
+    // Dagger
+    implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+
+    // Maps
+    api("com.google.maps.android:android-maps-utils:$rootProject.googleMapUtilsVersion") {
+        exclude group: "com.google.android.gms"
+    }
+    api "com.google.android.gms:play-services-maps:$rootProject.googlePlayServicesMapsVersion"
+    //Timber
+    api "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    implementation "com.squareup.moshi:moshi-kotlin:$rootProject.moshiVersion"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"
+
+    api "com.squareup.okio:okio:$rootProject.okioVersion"
+    testImplementation "org.threeten:threetenbp:$rootProject.threetenbpVersion"
+
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$rootProject.retrofitVersion"
+
+    implementation "io.michaelrocks:libphonenumber-android:$rootProject.libphonenoVersion"
+
+    // Firebase
+    implementation platform("com.google.firebase:firebase-bom:$rootProject.firebaseBOMVersion")
+    api "com.google.firebase:firebase-auth:$rootProject.firebaseAuthVersion"
+    api "com.google.firebase:firebase-config:$rootProject.firebaseConfigVersion"
+    api "com.google.firebase:firebase-firestore:$rootProject.firebaseFirestoreVersion"
+    api "com.google.firebase:firebase-functions:$rootProject.firebaseFunctionsVersion"
+    api "com.google.firebase:firebase-messaging:$rootProject.firebaseMessagingVersion"
+    implementation "com.google.firebase:firebase-analytics:$rootProject.firebaseAnalyticsVersion"
+    implementation "com.google.firebase:firebase-auth:$rootProject.firebaseAuthVersion"
+    implementation "com.firebaseui:firebase-ui-auth:$rootProject.firebaseUiVersion"
+
+    implementation "com.github.YarikSOffice:lingver:$rootProject.lingVerVersion"
+    implementation "com.github.tbruyelle:rxpermissions:$rootProject.rxPermissionsVersion"
+
+    implementation "com.jakewharton.rxbinding3:rxbinding:$rootProject.rxBindingVersion"
+
+    implementation "com.jakewharton.rxbinding3:rxbinding-core:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-appcompat:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-drawerlayout:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-leanback:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-recyclerview:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-slidingpanelayout:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-swiperefreshlayout:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-viewpager:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-viewpager2:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding3:rxbinding-material:$rootProject.rxBindingVersion"
+
+    implementation "io.reactivex.rxjava3:rxjava:$rootProject.rxJavaVersion"
+
+
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
