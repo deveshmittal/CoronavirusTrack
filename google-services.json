@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "423345983615",
+    "firebase_url": "https://coronavirustrack-edc81.firebaseio.com",
+    "project_id": "coronavirustrack-edc81",
+    "storage_bucket": "coronavirustrack-edc81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423345983615:android:cf3ba0add80eeb4e7cef4a",
+        "android_client_info": {
+          "package_name": "app.workchat.traceindia.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423345983615-5te0jtue8l41v4012l2vipavq038n98t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.workchat.traceindia.android",
+            "certificate_hash": "34ed5e632d3b93fbe9b9d1ed96f58967b0bf136b"
+          }
+        },
+        {
+          "client_id": "423345983615-lomjcnde5b21nvd9jv26e833nao4qodn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0x5vRVGWMCqjj6lMo2IkM-NenA5LisH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423345983615-lomjcnde5b21nvd9jv26e833nao4qodn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

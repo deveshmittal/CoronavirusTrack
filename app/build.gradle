@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
-apply plugin: 'io.fabric'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
 
@@ -25,7 +25,7 @@ android {
         targetSdkVersion rootProject.targetSdkVersion
         versionCode rootProject.versionCode
         versionName rootProject.versionNumber
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -111,6 +111,7 @@ dependencies {
     api "com.google.firebase:firebase-functions:$rootProject.firebaseFunctionsVersion"
     api "com.google.firebase:firebase-messaging:$rootProject.firebaseMessagingVersion"
     implementation "com.google.firebase:firebase-analytics:$rootProject.firebaseAnalyticsVersion"
+    implementation "com.google.firebase:firebase-crashlytics:$rootProject.firebaseCrashlyticsVersion"
     implementation "com.google.firebase:firebase-auth:$rootProject.firebaseAuthVersion"
     implementation "com.firebaseui:firebase-ui-auth:$rootProject.firebaseUiVersion"
 
@@ -129,6 +130,7 @@ dependencies {
     implementation "com.jakewharton.rxbinding3:rxbinding-viewpager:$rootProject.rxBindingVersion"
     implementation "com.jakewharton.rxbinding3:rxbinding-viewpager2:$rootProject.rxBindingVersion"
     implementation "com.jakewharton.rxbinding3:rxbinding-material:$rootProject.rxBindingVersion"
+    implementation "androidx.multidex:multidex:$rootProject.multidexVersion"
 
     implementation "io.reactivex.rxjava3:rxjava:$rootProject.rxJavaVersion"
 
